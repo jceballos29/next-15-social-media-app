@@ -9,7 +9,9 @@ import { isRedirectError } from "next/dist/client/components/redirect";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export async function signUp(credentials: SignUpValues): Promise<{ error: string }> {
+export async function signUp(
+  credentials: SignUpValues,
+): Promise<{ error: string }> {
   try {
     const { username, email, password } = signUpSchema.parse(credentials);
 

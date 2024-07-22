@@ -1,8 +1,9 @@
+import { SignUpForm } from "@/app/(auth)/sign-up/_components";
 import { Metadata } from "next";
-import signUpImage from "@/assets/signup-image.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import SignUpForm from "./form";
+
+import signUpImage from "@/assets/signup-image.jpg";
 
 export const metadata: Metadata = {
   title: "Sign Up",

@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "مهراد",
+        "last": "پارسا"
+      },
+      "location": {
+        "street": {
+          "number": 9558,
+          "name": "مجاهدین اسلام"
+        },
+        "city": "بجنورد",
+        "state": "هرمزگان",
+        "country": "Iran",
+        "postcode": 25790,
+        "coordinates": {
+          "latitude": "13.1791",
+          "longitude": "-132.2499"
+        },
+        "timezone": {
+          "offset": "+5:30",
+          "description": "Bombay, Calcutta, Madras, New Delhi"
+        }
+      },
+      "email": "mhrd.prs@example.com",
+      "login": {
+        "uuid": "dcbf93a2-8e60-4483-95dc-d2336a1323d7",
+        "username": "ticklishrabbit849",
+        "password": "fatty",
+        "salt": "I6zaqFoe",
+        "md5": "044b026e246c80b4e9aaa1b9c9aa0c92",
+        "sha1": "c65457ea21f6ca538ee1809383c5764bd2cf177e",
+        "sha256": "e8f416bfe91d93126f6312f0340ad729bbf0448ce4198db2bc41bbdbc1d879d5"
+      },
+      "dob": {
+        "date": "1952-06-28T18:35:06.176Z",
+        "age": 72
+      },
+      "registered": {
+        "date": "2006-07-03T10:15:50.328Z",
+        "age": 18
+      },
+      "phone": "046-12128455",
+      "cell": "0913-926-5201",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/24.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/24.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/24.jpg"
+      },
+      "nat": "IR"
+    },
+    {},
+    {},
+    {},
+    {}
+  ],
+  "info": {
+    "seed": "a0ef0ca2595f8d5e",
+    "results": 5,
+    "page": 1,
+    "version": "1.4"
+  }
+}

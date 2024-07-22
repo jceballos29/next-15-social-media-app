@@ -1,8 +1,7 @@
 "use client";
 
-import { SignUpValues, signUpSchema } from "@/lib/validation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { LoadingButton } from "@/components/loading-button";
+import { PasswordInput } from "@/components/password-input";
 import {
   Form,
   FormControl,
@@ -12,27 +11,28 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { SignInValues, signInSchema } from "@/lib/validation";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
-import { signUp } from "./actions";
+import { useForm } from "react-hook-form";
+import { signIn } from "../actions";
 
-export default function SignUpForm() {
+export default function LoginForm() {
   const [error, setError] = useState<string | undefined>(undefined);
   const [isPending, startTransition] = useTransition();
 
-  const form = useForm<SignUpValues>({
-    resolver: zodResolver(signUpSchema),
+  const form = useForm<SignInValues>({
+    resolver: zodResolver(signInSchema),
     defaultValues: {
       username: "",
-      email: "",
       password: "",
     },
   });
 
-  const onSubmit = async (values: SignUpValues) => {
+  const onSubmit = async (values: SignInValues) => {
     setError(undefined);
     startTransition(async () => {
-      const { error } = await signUp(values);
+      const { error } = await signIn(values);
       if (error) setError(error);
     });
   };
@@ -57,34 +57,25 @@ export default function SignUpForm() {
           />
           <FormField
             control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor={field.name}>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="example@mail.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
             name="password"
             render={({ field }) => (
               <FormItem>
                 <FormLabel htmlFor={field.name}>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="*********" type="password" {...field} />
+                  <PasswordInput placeholder="password" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <Button type="submit" className="mt-10 w-full">
-          Create Account
-        </Button>
+        <LoadingButton
+          loading={isPending}
+          type="submit"
+          className="mt-10 w-full"
+        >
+          Log in
+        </LoadingButton>
       </form>
     </Form>
   );
