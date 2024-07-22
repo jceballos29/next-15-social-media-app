@@ -48,7 +48,6 @@ export async function signIn(
 
     return redirect("/");
   } catch (error) {
-    console.error(error);
     if (isRedirectError(error)) throw error;
 
     return { error: "Something went wrong. Please try again" };

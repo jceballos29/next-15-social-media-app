@@ -15,7 +15,7 @@ import { SignInValues, signInSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { signIn } from "../actions";
+import { signIn } from "./actions";
 
 export default function LoginForm() {
   const [error, setError] = useState<string | undefined>(undefined);

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import loginImage from "@/assets/login-image.jpg";
 import Image from "next/image";
-import { LoginForm } from "@/app/(auth)/login/_components";
+import LoginForm from "./form";
 
 export const metadata: Metadata = {
   title: "Login",
